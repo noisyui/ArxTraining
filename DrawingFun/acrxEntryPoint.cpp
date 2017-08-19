@@ -24,6 +24,9 @@
 //-----------------------------------------------------------------------------
 #include "StdAfx.h"
 #include "resource.h"
+#include "Form_GetUserInput.h"
+
+using namespace DrawingFun;
 
 //-----------------------------------------------------------------------------
 #define szRDS _RXST("Asdk")
@@ -131,6 +134,12 @@ public:
 
 		return (RTNORM) ;
 	}
+
+    static void AsdkMyGroupOpenGetUserInputDialog()
+    {
+        GetInputDialog^ getInputDialog = gcnew GetInputDialog();
+        getInputDialog->ShowDialog();
+    }
 	
 } ;
 
@@ -140,5 +149,6 @@ IMPLEMENT_ARX_ENTRYPOINT(CDrawingFunApp)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MyCommand, MyCommandLocal, ACRX_CMD_MODAL, NULL)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MyPickFirst, MyPickFirstLocal, ACRX_CMD_MODAL | ACRX_CMD_USEPICKSET, NULL)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MySessionCmd, MySessionCmdLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
+ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, OpenGetUserInputDialog, OpenGetUserInputDialogLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
 ACED_ADSSYMBOL_ENTRY_AUTO(CDrawingFunApp, MyLispFunction, false)
 
