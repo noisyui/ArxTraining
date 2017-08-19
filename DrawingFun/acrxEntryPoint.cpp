@@ -151,4 +151,3 @@ ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MyPickFirst, MyPickFirst
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MySessionCmd, MySessionCmdLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, OpenGetUserInputDialog, OpenGetUserInputDialogLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
 ACED_ADSSYMBOL_ENTRY_AUTO(CDrawingFunApp, MyLispFunction, false)
-
