@@ -1,3 +1,5 @@
+#include "dbents.h"
+
 #pragma once
 
 namespace DrawingFun {
@@ -34,26 +36,51 @@ namespace DrawingFun {
                 delete components;
             }
         }
-    private: System::Windows::Forms::TextBox^  textBox1;
+    private: System::Windows::Forms::TextBox^  tbFirstX;
+    protected:
+
+    protected:
+
+    protected:
+
     protected:
     private: System::Windows::Forms::Label^  label1;
     private: System::Windows::Forms::Label^  label2;
-    private: System::Windows::Forms::TextBox^  textBox2;
-    private: System::Windows::Forms::TextBox^  textBox3;
-    private: System::Windows::Forms::TextBox^  textBox4;
-    private: System::Windows::Forms::TextBox^  textBox5;
-    private: System::Windows::Forms::TextBox^  textBox6;
+    private: System::Windows::Forms::TextBox^  tbSecondY;
+
+    private: System::Windows::Forms::TextBox^  tbFirstZ;
+
+
+
+
+    private: System::Windows::Forms::TextBox^  tbFirstY;
+    private: System::Windows::Forms::TextBox^  tbSecondZ;
+
+
+
+    private: System::Windows::Forms::TextBox^  tbSecondX;
+
+
+
+
     private: System::Windows::Forms::Label^  label3;
     private: System::Windows::Forms::Label^  label4;
     private: System::Windows::Forms::Label^  label5;
-    private: System::Windows::Forms::Button^  button1;
+    private: System::Windows::Forms::Button^  btnDrawLine;
+
     private: System::Windows::Forms::GroupBox^  groupBox1;
-    private: System::Windows::Forms::TextBox^  textBox7;
+    private: System::Windows::Forms::TextBox^  tbCenterX;
+
+
     private: System::Windows::Forms::GroupBox^  groupBox2;
-    private: System::Windows::Forms::TextBox^  textBox10;
-    private: System::Windows::Forms::TextBox^  textBox9;
-    private: System::Windows::Forms::Button^  button2;
-    private: System::Windows::Forms::TextBox^  textBox8;
+    private: System::Windows::Forms::TextBox^  tbCenterZ;
+
+    private: System::Windows::Forms::TextBox^  tbCenterY;
+    private: System::Windows::Forms::Button^  btnDrawCircle;
+
+
+    private: System::Windows::Forms::TextBox^  tbRadius;
+
     private: System::Windows::Forms::Label^  label7;
     private: System::Windows::Forms::Label^  label6;
     private: System::Windows::Forms::Label^  label10;
@@ -73,41 +100,41 @@ namespace DrawingFun {
         /// </summary>
         void InitializeComponent(void)
         {
-            this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+            this->tbFirstX = (gcnew System::Windows::Forms::TextBox());
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->label2 = (gcnew System::Windows::Forms::Label());
-            this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+            this->tbSecondY = (gcnew System::Windows::Forms::TextBox());
+            this->tbFirstZ = (gcnew System::Windows::Forms::TextBox());
+            this->tbFirstY = (gcnew System::Windows::Forms::TextBox());
+            this->tbSecondZ = (gcnew System::Windows::Forms::TextBox());
+            this->tbSecondX = (gcnew System::Windows::Forms::TextBox());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->label4 = (gcnew System::Windows::Forms::Label());
             this->label5 = (gcnew System::Windows::Forms::Label());
-            this->button1 = (gcnew System::Windows::Forms::Button());
+            this->btnDrawLine = (gcnew System::Windows::Forms::Button());
             this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-            this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+            this->tbCenterX = (gcnew System::Windows::Forms::TextBox());
             this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
             this->label10 = (gcnew System::Windows::Forms::Label());
             this->label9 = (gcnew System::Windows::Forms::Label());
             this->label8 = (gcnew System::Windows::Forms::Label());
-            this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-            this->button2 = (gcnew System::Windows::Forms::Button());
-            this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+            this->tbCenterZ = (gcnew System::Windows::Forms::TextBox());
+            this->tbCenterY = (gcnew System::Windows::Forms::TextBox());
+            this->btnDrawCircle = (gcnew System::Windows::Forms::Button());
+            this->tbRadius = (gcnew System::Windows::Forms::TextBox());
             this->label7 = (gcnew System::Windows::Forms::Label());
             this->label6 = (gcnew System::Windows::Forms::Label());
             this->groupBox1->SuspendLayout();
             this->groupBox2->SuspendLayout();
             this->SuspendLayout();
             // 
-            // textBox1
+            // tbFirstX
             // 
-            this->textBox1->Location = System::Drawing::Point(101, 35);
-            this->textBox1->Margin = System::Windows::Forms::Padding(2);
-            this->textBox1->Name = L"textBox1";
-            this->textBox1->Size = System::Drawing::Size(65, 21);
-            this->textBox1->TabIndex = 0;
+            this->tbFirstX->Location = System::Drawing::Point(101, 35);
+            this->tbFirstX->Margin = System::Windows::Forms::Padding(2);
+            this->tbFirstX->Name = L"tbFirstX";
+            this->tbFirstX->Size = System::Drawing::Size(65, 21);
+            this->tbFirstX->TabIndex = 0;
             // 
             // label1
             // 
@@ -129,45 +156,45 @@ namespace DrawingFun {
             this->label2->TabIndex = 2;
             this->label2->Text = L"Second Point:";
             // 
-            // textBox2
+            // tbSecondY
             // 
-            this->textBox2->Location = System::Drawing::Point(191, 67);
-            this->textBox2->Margin = System::Windows::Forms::Padding(2);
-            this->textBox2->Name = L"textBox2";
-            this->textBox2->Size = System::Drawing::Size(65, 21);
-            this->textBox2->TabIndex = 4;
+            this->tbSecondY->Location = System::Drawing::Point(191, 67);
+            this->tbSecondY->Margin = System::Windows::Forms::Padding(2);
+            this->tbSecondY->Name = L"tbSecondY";
+            this->tbSecondY->Size = System::Drawing::Size(65, 21);
+            this->tbSecondY->TabIndex = 4;
             // 
-            // textBox3
+            // tbFirstZ
             // 
-            this->textBox3->Location = System::Drawing::Point(284, 35);
-            this->textBox3->Margin = System::Windows::Forms::Padding(2);
-            this->textBox3->Name = L"textBox3";
-            this->textBox3->Size = System::Drawing::Size(65, 21);
-            this->textBox3->TabIndex = 2;
+            this->tbFirstZ->Location = System::Drawing::Point(284, 35);
+            this->tbFirstZ->Margin = System::Windows::Forms::Padding(2);
+            this->tbFirstZ->Name = L"tbFirstZ";
+            this->tbFirstZ->Size = System::Drawing::Size(65, 21);
+            this->tbFirstZ->TabIndex = 2;
             // 
-            // textBox4
+            // tbFirstY
             // 
-            this->textBox4->Location = System::Drawing::Point(191, 35);
-            this->textBox4->Margin = System::Windows::Forms::Padding(2);
-            this->textBox4->Name = L"textBox4";
-            this->textBox4->Size = System::Drawing::Size(65, 21);
-            this->textBox4->TabIndex = 1;
+            this->tbFirstY->Location = System::Drawing::Point(191, 35);
+            this->tbFirstY->Margin = System::Windows::Forms::Padding(2);
+            this->tbFirstY->Name = L"tbFirstY";
+            this->tbFirstY->Size = System::Drawing::Size(65, 21);
+            this->tbFirstY->TabIndex = 1;
             // 
-            // textBox5
+            // tbSecondZ
             // 
-            this->textBox5->Location = System::Drawing::Point(284, 67);
-            this->textBox5->Margin = System::Windows::Forms::Padding(2);
-            this->textBox5->Name = L"textBox5";
-            this->textBox5->Size = System::Drawing::Size(65, 21);
-            this->textBox5->TabIndex = 5;
+            this->tbSecondZ->Location = System::Drawing::Point(284, 67);
+            this->tbSecondZ->Margin = System::Windows::Forms::Padding(2);
+            this->tbSecondZ->Name = L"tbSecondZ";
+            this->tbSecondZ->Size = System::Drawing::Size(65, 21);
+            this->tbSecondZ->TabIndex = 5;
             // 
-            // textBox6
+            // tbSecondX
             // 
-            this->textBox6->Location = System::Drawing::Point(101, 67);
-            this->textBox6->Margin = System::Windows::Forms::Padding(2);
-            this->textBox6->Name = L"textBox6";
-            this->textBox6->Size = System::Drawing::Size(65, 21);
-            this->textBox6->TabIndex = 3;
+            this->tbSecondX->Location = System::Drawing::Point(101, 67);
+            this->tbSecondX->Margin = System::Windows::Forms::Padding(2);
+            this->tbSecondX->Name = L"tbSecondX";
+            this->tbSecondX->Size = System::Drawing::Size(65, 21);
+            this->tbSecondX->TabIndex = 3;
             // 
             // label3
             // 
@@ -199,30 +226,31 @@ namespace DrawingFun {
             this->label5->TabIndex = 10;
             this->label5->Text = L"y";
             // 
-            // button1
+            // btnDrawLine
             // 
-            this->button1->Location = System::Drawing::Point(266, 99);
-            this->button1->Margin = System::Windows::Forms::Padding(2);
-            this->button1->Name = L"button1";
-            this->button1->Size = System::Drawing::Size(81, 23);
-            this->button1->TabIndex = 6;
-            this->button1->Text = L"Draw Line";
-            this->button1->UseVisualStyleBackColor = true;
+            this->btnDrawLine->Location = System::Drawing::Point(266, 99);
+            this->btnDrawLine->Margin = System::Windows::Forms::Padding(2);
+            this->btnDrawLine->Name = L"btnDrawLine";
+            this->btnDrawLine->Size = System::Drawing::Size(81, 23);
+            this->btnDrawLine->TabIndex = 6;
+            this->btnDrawLine->Text = L"Draw Line";
+            this->btnDrawLine->UseVisualStyleBackColor = true;
+            this->btnDrawLine->Click += gcnew System::EventHandler(this, &GetInputDialog::button1_Click);
             // 
             // groupBox1
             // 
-            this->groupBox1->Controls->Add(this->textBox1);
-            this->groupBox1->Controls->Add(this->button1);
+            this->groupBox1->Controls->Add(this->tbFirstX);
+            this->groupBox1->Controls->Add(this->btnDrawLine);
             this->groupBox1->Controls->Add(this->label1);
             this->groupBox1->Controls->Add(this->label5);
             this->groupBox1->Controls->Add(this->label2);
             this->groupBox1->Controls->Add(this->label4);
-            this->groupBox1->Controls->Add(this->textBox2);
+            this->groupBox1->Controls->Add(this->tbSecondY);
             this->groupBox1->Controls->Add(this->label3);
-            this->groupBox1->Controls->Add(this->textBox3);
-            this->groupBox1->Controls->Add(this->textBox6);
-            this->groupBox1->Controls->Add(this->textBox4);
-            this->groupBox1->Controls->Add(this->textBox5);
+            this->groupBox1->Controls->Add(this->tbFirstZ);
+            this->groupBox1->Controls->Add(this->tbSecondX);
+            this->groupBox1->Controls->Add(this->tbFirstY);
+            this->groupBox1->Controls->Add(this->tbSecondZ);
             this->groupBox1->Location = System::Drawing::Point(9, 8);
             this->groupBox1->Margin = System::Windows::Forms::Padding(2);
             this->groupBox1->Name = L"groupBox1";
@@ -232,26 +260,26 @@ namespace DrawingFun {
             this->groupBox1->TabStop = false;
             this->groupBox1->Text = L"draw line";
             // 
-            // textBox7
+            // tbCenterX
             // 
-            this->textBox7->Location = System::Drawing::Point(101, 31);
-            this->textBox7->Margin = System::Windows::Forms::Padding(2);
-            this->textBox7->Name = L"textBox7";
-            this->textBox7->Size = System::Drawing::Size(65, 21);
-            this->textBox7->TabIndex = 7;
+            this->tbCenterX->Location = System::Drawing::Point(101, 31);
+            this->tbCenterX->Margin = System::Windows::Forms::Padding(2);
+            this->tbCenterX->Name = L"tbCenterX";
+            this->tbCenterX->Size = System::Drawing::Size(65, 21);
+            this->tbCenterX->TabIndex = 7;
             // 
             // groupBox2
             // 
             this->groupBox2->Controls->Add(this->label10);
             this->groupBox2->Controls->Add(this->label9);
             this->groupBox2->Controls->Add(this->label8);
-            this->groupBox2->Controls->Add(this->textBox10);
-            this->groupBox2->Controls->Add(this->textBox9);
-            this->groupBox2->Controls->Add(this->button2);
-            this->groupBox2->Controls->Add(this->textBox8);
+            this->groupBox2->Controls->Add(this->tbCenterZ);
+            this->groupBox2->Controls->Add(this->tbCenterY);
+            this->groupBox2->Controls->Add(this->btnDrawCircle);
+            this->groupBox2->Controls->Add(this->tbRadius);
             this->groupBox2->Controls->Add(this->label7);
             this->groupBox2->Controls->Add(this->label6);
-            this->groupBox2->Controls->Add(this->textBox7);
+            this->groupBox2->Controls->Add(this->tbCenterX);
             this->groupBox2->Location = System::Drawing::Point(9, 151);
             this->groupBox2->Margin = System::Windows::Forms::Padding(2);
             this->groupBox2->Name = L"groupBox2";
@@ -291,39 +319,40 @@ namespace DrawingFun {
             this->label8->TabIndex = 12;
             this->label8->Text = L"x";
             // 
-            // textBox10
+            // tbCenterZ
             // 
-            this->textBox10->Location = System::Drawing::Point(284, 31);
-            this->textBox10->Margin = System::Windows::Forms::Padding(2);
-            this->textBox10->Name = L"textBox10";
-            this->textBox10->Size = System::Drawing::Size(65, 21);
-            this->textBox10->TabIndex = 9;
+            this->tbCenterZ->Location = System::Drawing::Point(284, 31);
+            this->tbCenterZ->Margin = System::Windows::Forms::Padding(2);
+            this->tbCenterZ->Name = L"tbCenterZ";
+            this->tbCenterZ->Size = System::Drawing::Size(65, 21);
+            this->tbCenterZ->TabIndex = 9;
             // 
-            // textBox9
+            // tbCenterY
             // 
-            this->textBox9->Location = System::Drawing::Point(191, 31);
-            this->textBox9->Margin = System::Windows::Forms::Padding(2);
-            this->textBox9->Name = L"textBox9";
-            this->textBox9->Size = System::Drawing::Size(65, 21);
-            this->textBox9->TabIndex = 8;
+            this->tbCenterY->Location = System::Drawing::Point(191, 31);
+            this->tbCenterY->Margin = System::Windows::Forms::Padding(2);
+            this->tbCenterY->Name = L"tbCenterY";
+            this->tbCenterY->Size = System::Drawing::Size(65, 21);
+            this->tbCenterY->TabIndex = 8;
             // 
-            // button2
+            // btnDrawCircle
             // 
-            this->button2->Location = System::Drawing::Point(266, 90);
-            this->button2->Margin = System::Windows::Forms::Padding(2);
-            this->button2->Name = L"button2";
-            this->button2->Size = System::Drawing::Size(81, 23);
-            this->button2->TabIndex = 11;
-            this->button2->Text = L"Draw Circle";
-            this->button2->UseVisualStyleBackColor = true;
+            this->btnDrawCircle->Location = System::Drawing::Point(266, 90);
+            this->btnDrawCircle->Margin = System::Windows::Forms::Padding(2);
+            this->btnDrawCircle->Name = L"btnDrawCircle";
+            this->btnDrawCircle->Size = System::Drawing::Size(81, 23);
+            this->btnDrawCircle->TabIndex = 11;
+            this->btnDrawCircle->Text = L"Draw Circle";
+            this->btnDrawCircle->UseVisualStyleBackColor = true;
+            this->btnDrawCircle->Click += gcnew System::EventHandler(this, &GetInputDialog::btnDrawCircle_Click);
             // 
-            // textBox8
+            // tbRadius
             // 
-            this->textBox8->Location = System::Drawing::Point(101, 63);
-            this->textBox8->Margin = System::Windows::Forms::Padding(2);
-            this->textBox8->Name = L"textBox8";
-            this->textBox8->Size = System::Drawing::Size(65, 21);
-            this->textBox8->TabIndex = 10;
+            this->tbRadius->Location = System::Drawing::Point(101, 63);
+            this->tbRadius->Margin = System::Windows::Forms::Padding(2);
+            this->tbRadius->Name = L"tbRadius";
+            this->tbRadius->Size = System::Drawing::Size(65, 21);
+            this->tbRadius->TabIndex = 10;
             // 
             // label7
             // 
@@ -365,5 +394,55 @@ namespace DrawingFun {
 
         }
 #pragma endregion
+
+    private:
+
+        System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
+        {
+            double ptFirstX = Convert::ToDouble(tbFirstX->Text);
+            double ptFirstY = Convert::ToDouble(tbFirstY->Text);
+            double ptFirstZ = Convert::ToDouble(tbFirstZ->Text);
+            AcGePoint3d ptStart(ptFirstX, ptFirstY, ptFirstZ);
+
+            double ptSecondX = Convert::ToDouble(tbSecondX->Text);
+            double ptSecondY = Convert::ToDouble(tbSecondY->Text);
+            double ptSecondZ = Convert::ToDouble(tbSecondZ->Text);
+            AcGePoint3d ptEnd(ptSecondX, ptSecondY, ptSecondZ);
+
+            AcDbLine *pLine = new AcDbLine(ptStart, ptEnd);
+
+            postToModelSpace(pLine);
+        }
+
+        System::Void btnDrawCircle_Click(System::Object^  sender, System::EventArgs^  e) 
+        {
+            double ptCenterX = Convert::ToDouble(tbCenterX->Text);
+            double ptCenterY = Convert::ToDouble(tbCenterY->Text);
+            double ptCenterZ = Convert::ToDouble(tbCenterZ->Text);
+            AcGePoint3d ptCenter(ptCenterX, ptCenterY, ptCenterZ);
+
+            AcGeVector3d vec(0, 0, 1);
+
+            double radius = Convert::ToDouble(tbRadius->Text);
+
+            AcDbCircle *pCircle = new AcDbCircle(ptCenter, vec, radius);
+
+            postToModelSpace(pCircle);
+        }
+
+        System::Void postToModelSpace(AcDbEntity* pEnt)
+        {
+            AcDbBlockTable *pBlockTable;
+            acdbHostApplicationServices()->workingDatabase()->getBlockTable(pBlockTable, AcDb::kForRead);
+            AcDbBlockTableRecord *pBlockTableRecord;
+            pBlockTable->getAt(ACDB_MODEL_SPACE, pBlockTableRecord, AcDb::kForWrite);
+            AcDbObjectId entId;
+            pBlockTableRecord->appendAcDbEntity(entId, pEnt);
+
+            pBlockTable->close();
+            pBlockTableRecord->close();
+            pEnt->close();
+        }
+
     };
 }
