@@ -138,7 +138,7 @@ public:
     static void AsdkMyGroupOpenGetUserInputDialog()
     {
         GetInputDialog^ getInputDialog = gcnew GetInputDialog();
-        getInputDialog->ShowDialog();
+        getInputDialog->Show();
     }
 	
 } ;
