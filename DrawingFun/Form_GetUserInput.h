@@ -393,12 +393,12 @@ namespace DrawingFun {
 
         System::Void btnDrawCircle_Click(System::Object^  sender, System::EventArgs^  e)
         {
-            logToFile("btnDrawCircle_Click Begin!\n");
+            //logToFile("btnDrawCircle_Click Begin!\n");
 
             acutPrintf(_T("btnDrawCircle_Click Begin!"));
 
-            double ptCenterX = Convert::ToDouble(tbCenterX->Text); 
-            logToFile("ptCenterX:%.2f\n");
+            double ptCenterX = Convert::ToDouble(tbCenterX->Text);
+            //logToFile("ptCenterX:%.2f\n");
             acutPrintf(_T("ptCenterX:%.2f"), ptCenterX);
             double ptCenterY = Convert::ToDouble(tbCenterY->Text);
             double ptCenterZ = Convert::ToDouble(tbCenterZ->Text);
@@ -413,7 +413,7 @@ namespace DrawingFun {
 
             postToModelSpace(pCircle);
 
-            logToFile("btnDrawCircle_Click End!\n");
+            //logToFile("btnDrawCircle_Click End!\n");
             acutPrintf(_T("btnDrawCircle_Click End!"));
         }
 
@@ -433,12 +433,16 @@ namespace DrawingFun {
 
             pEnt->close();
 
+            //actrTransactionManager->queueForGraphicsFlush();
+            actrTransactionManager->flushGraphics();
+            acedUpdateDisplay();
+
             acDocManager->unlockDocument(curDoc());
         }
 
-        System::Void GetInputDialog_Load(System::Object^  sender, System::EventArgs^  e) 
+        System::Void GetInputDialog_Load(System::Object^  sender, System::EventArgs^  e)
         {
-            logToFile("setFormDisplayAtCenter Begin!\n");
+            //logToFile("setFormDisplayAtCenter Begin!\n");
             setFormDisplayAtCenter(this);
         }
 
@@ -453,7 +457,7 @@ namespace DrawingFun {
             form->Top = primaryScreen->WorkingArea.Location.Y + (primaryScreen->Bounds.Height - form->Height) / 2;
         }
 
-        System::Void logToFile(char *str )
+        System::Void logToFile(char *str)
         {
             std::ofstream out;
             out.open("out.txt", std::ios::app);
