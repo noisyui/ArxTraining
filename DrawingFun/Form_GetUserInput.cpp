@@ -12,44 +12,52 @@ System::Void DrawingFun::GetInputDialog::GetInputDialog_Load(System::Object^  se
 
 System::Void DrawingFun::GetInputDialog::button1_Click(System::Object^  sender, System::EventArgs^  e)
 {
-    double ptFirstX = Convert::ToDouble(tbFirstX->Text);
-    double ptFirstY = Convert::ToDouble(tbFirstY->Text);
-    double ptFirstZ = Convert::ToDouble(tbFirstZ->Text);
-    AcGePoint3d ptStart(ptFirstX, ptFirstY, ptFirstZ);
+    if (isDouble(tbFirstX->Text) && isDouble(tbFirstY->Text) && isDouble(tbFirstZ->Text)
+        && isDouble(tbSecondX->Text) && isDouble(tbSecondY->Text) && isDouble(tbSecondZ->Text) )
+    {
+        double ptFirstX = Convert::ToDouble(tbFirstX->Text);
+        double ptFirstY = Convert::ToDouble(tbFirstY->Text);
+        double ptFirstZ = Convert::ToDouble(tbFirstZ->Text);
+        AcGePoint3d ptStart(ptFirstX, ptFirstY, ptFirstZ);
 
-    double ptSecondX = Convert::ToDouble(tbSecondX->Text);
-    double ptSecondY = Convert::ToDouble(tbSecondY->Text);
-    double ptSecondZ = Convert::ToDouble(tbSecondZ->Text);
-    AcGePoint3d ptEnd(ptSecondX, ptSecondY, ptSecondZ);
+        double ptSecondX = Convert::ToDouble(tbSecondX->Text);
+        double ptSecondY = Convert::ToDouble(tbSecondY->Text);
+        double ptSecondZ = Convert::ToDouble(tbSecondZ->Text);
+        AcGePoint3d ptEnd(ptSecondX, ptSecondY, ptSecondZ);
 
-    AcDbLine *pLine = new AcDbLine(ptStart, ptEnd);
-    pLine->setColorIndex(5);
+        AcDbLine *pLine = new AcDbLine(ptStart, ptEnd);
+        pLine->setColorIndex(5);
 
-    postToModelSpace(pLine);
+        postToModelSpace(pLine);
+    }
 }
 
 System::Void DrawingFun::GetInputDialog::btnDrawCircle_Click(System::Object^  sender, System::EventArgs^  e)
 {
-    //logToFile("btnDrawCircle_Click Begin!\n");
+    if (isDouble(tbCenterX->Text) && isDouble(tbCenterY->Text) && isDouble(tbCenterZ->Text)
+        && isDouble(tbRadius->Text))
+    {
+        //logToFile("btnDrawCircle_Click Begin!\n");
 
-    acutPrintf(_T("btnDrawCircle_Click Begin!"));
+        acutPrintf(_T("btnDrawCircle_Click Begin!"));
 
-    double ptCenterX = Convert::ToDouble(tbCenterX->Text);
-    //logToFile("ptCenterX:%.2f\n");
-    acutPrintf(_T("ptCenterX:%.2f"), ptCenterX);
-    double ptCenterY = Convert::ToDouble(tbCenterY->Text);
-    double ptCenterZ = Convert::ToDouble(tbCenterZ->Text);
-    AcGePoint3d ptCenter(ptCenterX, ptCenterY, ptCenterZ);
+        double ptCenterX = Convert::ToDouble(tbCenterX->Text);
+        //logToFile("ptCenterX:%.2f\n");
+        acutPrintf(_T("ptCenterX:%.2f"), ptCenterX);
+        double ptCenterY = Convert::ToDouble(tbCenterY->Text);
+        double ptCenterZ = Convert::ToDouble(tbCenterZ->Text);
+        AcGePoint3d ptCenter(ptCenterX, ptCenterY, ptCenterZ);
 
-    AcGeVector3d vec(0, 0, 1);
+        AcGeVector3d vec(0, 0, 1);
 
-    double radius = Convert::ToDouble(tbRadius->Text);
+        double radius = Convert::ToDouble(tbRadius->Text);
 
-    AcDbCircle *pCircle = new AcDbCircle(ptCenter, vec, radius);
-    pCircle->setColorIndex(1);
+        AcDbCircle *pCircle = new AcDbCircle(ptCenter, vec, radius);
+        pCircle->setColorIndex(1);
 
-    postToModelSpace(pCircle);
+        postToModelSpace(pCircle);
 
-    //logToFile("btnDrawCircle_Click End!\n");
-    acutPrintf(_T("btnDrawCircle_Click End!"));
+        //logToFile("btnDrawCircle_Click End!\n");
+        acutPrintf(_T("btnDrawCircle_Click End!"));
+    }
 }

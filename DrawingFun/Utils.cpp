@@ -1,5 +1,8 @@
 #include "StdAfx.h"
+#include <regex>
 #include "Utils.h"
+
+using namespace System::Text::RegularExpressions;
 
 void postToModelSpace(AcDbEntity* pEnt)
 {
@@ -44,4 +47,12 @@ void logToFile(char *str)
         out << str;
         out.close();
     }
+}
+
+bool isDouble(System::String^ str)
+{
+    System::String^ pattern = "^[0-9]*([.][0-9]*)?$";
+    Regex^ r = gcnew Regex(pattern);
+    bool retVal = r->IsMatch(str);
+    return retVal;
 }
