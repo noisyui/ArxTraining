@@ -135,7 +135,7 @@ public:
 		return (RTNORM) ;
 	}
 
-    static void AsdkMyGroupOpenGetUserInputDialog()
+    static void AsdkMyGroupDrawLineCircle()
     {
         GetInputDialog^ getInputDialog = gcnew GetInputDialog();
         getInputDialog->Show();
@@ -149,5 +149,5 @@ IMPLEMENT_ARX_ENTRYPOINT(CDrawingFunApp)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MyCommand, MyCommandLocal, ACRX_CMD_MODAL, NULL)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MyPickFirst, MyPickFirstLocal, ACRX_CMD_MODAL | ACRX_CMD_USEPICKSET, NULL)
 ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, MySessionCmd, MySessionCmdLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
-ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, OpenGetUserInputDialog, OpenGetUserInputDialogLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
+ACED_ARXCOMMAND_ENTRY_AUTO(CDrawingFunApp, AsdkMyGroup, DrawLineCircle, DrawLineCircleLocal, ACRX_CMD_MODAL | ACRX_CMD_SESSION, NULL)
 ACED_ADSSYMBOL_ENTRY_AUTO(CDrawingFunApp, MyLispFunction, false)

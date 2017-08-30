@@ -10,7 +10,7 @@ System::Void DrawingFun::GetInputDialog::GetInputDialog_Load(System::Object^  se
 }
 
 
-System::Void DrawingFun::GetInputDialog::button1_Click(System::Object^  sender, System::EventArgs^  e)
+System::Void DrawingFun::GetInputDialog::btnDrawLine_Click(System::Object^  sender, System::EventArgs^  e)
 {
     if (isDouble(tbFirstX->Text) && isDouble(tbFirstY->Text) && isDouble(tbFirstZ->Text)
         && isDouble(tbSecondX->Text) && isDouble(tbSecondY->Text) && isDouble(tbSecondZ->Text) )
