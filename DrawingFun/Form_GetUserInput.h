@@ -35,50 +35,24 @@ namespace DrawingFun {
             }
         }
     private: System::Windows::Forms::TextBox^  tbFirstX;
-    protected:
-
-    protected:
-
-    protected:
-
-    protected:
     private: System::Windows::Forms::Label^  label1;
     private: System::Windows::Forms::Label^  label2;
     private: System::Windows::Forms::TextBox^  tbSecondY;
-
     private: System::Windows::Forms::TextBox^  tbFirstZ;
-
-
-
-
     private: System::Windows::Forms::TextBox^  tbFirstY;
     private: System::Windows::Forms::TextBox^  tbSecondZ;
-
-
-
     private: System::Windows::Forms::TextBox^  tbSecondX;
-
-
-
-
     private: System::Windows::Forms::Label^  label3;
     private: System::Windows::Forms::Label^  label4;
     private: System::Windows::Forms::Label^  label5;
     private: System::Windows::Forms::Button^  btnDrawLine;
-
     private: System::Windows::Forms::GroupBox^  groupBox1;
     private: System::Windows::Forms::TextBox^  tbCenterX;
-
-
     private: System::Windows::Forms::GroupBox^  groupBox2;
     private: System::Windows::Forms::TextBox^  tbCenterZ;
-
     private: System::Windows::Forms::TextBox^  tbCenterY;
     private: System::Windows::Forms::Button^  btnDrawCircle;
-
-
     private: System::Windows::Forms::TextBox^  tbRadius;
-
     private: System::Windows::Forms::Label^  label7;
     private: System::Windows::Forms::Label^  label6;
     private: System::Windows::Forms::Label^  label10;

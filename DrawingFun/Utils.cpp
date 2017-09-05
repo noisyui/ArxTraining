@@ -49,10 +49,16 @@ void logToFile(char *str)
     }
 }
 
-bool isDouble(System::String^ str)
+bool validateDouble(System::String^ str)
 {
     System::String^ pattern = "^[0-9]*([.][0-9]*)?$";
     Regex^ r = gcnew Regex(pattern);
     bool retVal = r->IsMatch(str);
+    return retVal;
+}
+
+bool validateDouble(System::Windows::Forms::TextBox^ textBox)
+{
+    bool retVal = validateDouble(textBox->Text);
     return retVal;
 }

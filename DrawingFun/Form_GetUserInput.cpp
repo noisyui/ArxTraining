@@ -12,8 +12,8 @@ System::Void DrawingFun::GetInputDialog::GetInputDialog_Load(System::Object^  se
 
 System::Void DrawingFun::GetInputDialog::btnDrawLine_Click(System::Object^  sender, System::EventArgs^  e)
 {
-    if (isDouble(tbFirstX->Text) && isDouble(tbFirstY->Text) && isDouble(tbFirstZ->Text)
-        && isDouble(tbSecondX->Text) && isDouble(tbSecondY->Text) && isDouble(tbSecondZ->Text) )
+    if (validateDouble(tbFirstX) && validateDouble(tbFirstY) && validateDouble(tbFirstZ)
+        && validateDouble(tbSecondX) && validateDouble(tbSecondY) && validateDouble(tbSecondZ) )
     {
         double ptFirstX = Convert::ToDouble(tbFirstX->Text);
         double ptFirstY = Convert::ToDouble(tbFirstY->Text);
@@ -34,8 +34,8 @@ System::Void DrawingFun::GetInputDialog::btnDrawLine_Click(System::Object^  send
 
 System::Void DrawingFun::GetInputDialog::btnDrawCircle_Click(System::Object^  sender, System::EventArgs^  e)
 {
-    if (isDouble(tbCenterX->Text) && isDouble(tbCenterY->Text) && isDouble(tbCenterZ->Text)
-        && isDouble(tbRadius->Text))
+    if (validateDouble(tbCenterX) && validateDouble(tbCenterY) && validateDouble(tbCenterZ)
+        && validateDouble(tbRadius))
     {
         //logToFile("btnDrawCircle_Click Begin!\n");
 
