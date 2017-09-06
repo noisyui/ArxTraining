@@ -9,11 +9,62 @@ System::Void DrawingFun::GetInputDialog::GetInputDialog_Load(System::Object^  se
     setFormDisplayAtCenter(this);
 }
 
+System::Void DrawingFun::GetInputDialog::btnPickPoint1_Click(System::Object^  sender, System::EventArgs^  e)
+{
+    if (acedSetOLELock(5) == Adesk::kTrue) // arbitrary handle value
+    {
+        this->Hide();
+        ads_point result;
+        if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
+        {
+            tbFirstX->Text = Convert::ToString(result[X]);
+            tbFirstY->Text = Convert::ToString(result[Y]);
+            tbFirstZ->Text = Convert::ToString(result[Z]);
+        }
+        this->Show();
+        acedClearOLELock(5);
+    }
+}
+
+System::Void DrawingFun::GetInputDialog::btnPickPoint2_Click(System::Object^  sender, System::EventArgs^  e)
+{
+    if (acedSetOLELock(5) == Adesk::kTrue) // arbitrary handle value
+    {
+        this->Hide();
+        ads_point result;
+        if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
+        {
+            tbSecondX->Text = Convert::ToString(result[X]);
+            tbSecondY->Text = Convert::ToString(result[Y]);
+            tbSecondZ->Text = Convert::ToString(result[Z]);
+        }
+        this->Show();
+        acedClearOLELock(5);
+    }
+}
+
+System::Void DrawingFun::GetInputDialog::btnPickCenterPnt_Click(System::Object^  sender, System::EventArgs^  e)
+{
+    if (acedSetOLELock(5) == Adesk::kTrue) // arbitrary handle value
+    {
+        this->SetVisibleCore(false);
+        ads_point result;
+        if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
+        {
+            this->SetVisibleCore(true);
+            tbCenterX->Text = Convert::ToString(result[X]);
+            tbCenterY->Text = Convert::ToString(result[Y]);
+            tbCenterZ->Text = Convert::ToString(result[Z]);
+        }
+        this->SetVisibleCore(true);
+        acedClearOLELock(5);
+    }
+}
 
 System::Void DrawingFun::GetInputDialog::btnDrawLine_Click(System::Object^  sender, System::EventArgs^  e)
 {
     if (validateDouble(tbFirstX) && validateDouble(tbFirstY) && validateDouble(tbFirstZ)
-        && validateDouble(tbSecondX) && validateDouble(tbSecondY) && validateDouble(tbSecondZ) )
+        && validateDouble(tbSecondX) && validateDouble(tbSecondY) && validateDouble(tbSecondZ))
     {
         double ptFirstX = Convert::ToDouble(tbFirstX->Text);
         double ptFirstY = Convert::ToDouble(tbFirstY->Text);

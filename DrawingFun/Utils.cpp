@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include <regex>
+#include <tchar.h>
 #include "Utils.h"
 
 using namespace System::Text::RegularExpressions;
@@ -51,6 +52,7 @@ void logToFile(char *str)
 
 bool validateDouble(System::String^ str)
 {
+    acutPrintf(_T("start validate!"));
     System::String^ pattern = "^[0-9]*([.][0-9]*)?$";
     Regex^ r = gcnew Regex(pattern);
     bool retVal = r->IsMatch(str);

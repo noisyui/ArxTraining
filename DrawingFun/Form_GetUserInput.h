@@ -58,6 +58,10 @@ namespace DrawingFun {
     private: System::Windows::Forms::Label^  label10;
     private: System::Windows::Forms::Label^  label9;
     private: System::Windows::Forms::Label^  label8;
+    private: System::Windows::Forms::Button^  btnPickPoint2;
+    private: System::Windows::Forms::Button^  btnPickPoint1;
+    private: System::Windows::Forms::Button^  btnPickCenterPnt;
+
 
     private:
         /// <summary>
@@ -85,8 +89,11 @@ namespace DrawingFun {
             this->label5 = (gcnew System::Windows::Forms::Label());
             this->btnDrawLine = (gcnew System::Windows::Forms::Button());
             this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+            this->btnPickPoint2 = (gcnew System::Windows::Forms::Button());
+            this->btnPickPoint1 = (gcnew System::Windows::Forms::Button());
             this->tbCenterX = (gcnew System::Windows::Forms::TextBox());
             this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+            this->btnPickCenterPnt = (gcnew System::Windows::Forms::Button());
             this->label10 = (gcnew System::Windows::Forms::Label());
             this->label9 = (gcnew System::Windows::Forms::Label());
             this->label8 = (gcnew System::Windows::Forms::Label());
@@ -130,7 +137,7 @@ namespace DrawingFun {
             // 
             // tbSecondY
             // 
-            this->tbSecondY->Location = System::Drawing::Point(191, 67);
+            this->tbSecondY->Location = System::Drawing::Point(170, 67);
             this->tbSecondY->Margin = System::Windows::Forms::Padding(2);
             this->tbSecondY->Name = L"tbSecondY";
             this->tbSecondY->Size = System::Drawing::Size(65, 21);
@@ -138,7 +145,7 @@ namespace DrawingFun {
             // 
             // tbFirstZ
             // 
-            this->tbFirstZ->Location = System::Drawing::Point(284, 35);
+            this->tbFirstZ->Location = System::Drawing::Point(239, 35);
             this->tbFirstZ->Margin = System::Windows::Forms::Padding(2);
             this->tbFirstZ->Name = L"tbFirstZ";
             this->tbFirstZ->Size = System::Drawing::Size(65, 21);
@@ -146,7 +153,7 @@ namespace DrawingFun {
             // 
             // tbFirstY
             // 
-            this->tbFirstY->Location = System::Drawing::Point(191, 35);
+            this->tbFirstY->Location = System::Drawing::Point(170, 35);
             this->tbFirstY->Margin = System::Windows::Forms::Padding(2);
             this->tbFirstY->Name = L"tbFirstY";
             this->tbFirstY->Size = System::Drawing::Size(65, 21);
@@ -154,7 +161,7 @@ namespace DrawingFun {
             // 
             // tbSecondZ
             // 
-            this->tbSecondZ->Location = System::Drawing::Point(284, 67);
+            this->tbSecondZ->Location = System::Drawing::Point(239, 67);
             this->tbSecondZ->Margin = System::Windows::Forms::Padding(2);
             this->tbSecondZ->Name = L"tbSecondZ";
             this->tbSecondZ->Size = System::Drawing::Size(65, 21);
@@ -181,7 +188,7 @@ namespace DrawingFun {
             // label4
             // 
             this->label4->AutoSize = true;
-            this->label4->Location = System::Drawing::Point(311, 16);
+            this->label4->Location = System::Drawing::Point(267, 16);
             this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label4->Name = L"label4";
             this->label4->Size = System::Drawing::Size(11, 12);
@@ -191,7 +198,7 @@ namespace DrawingFun {
             // label5
             // 
             this->label5->AutoSize = true;
-            this->label5->Location = System::Drawing::Point(217, 16);
+            this->label5->Location = System::Drawing::Point(200, 16);
             this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label5->Name = L"label5";
             this->label5->Size = System::Drawing::Size(11, 12);
@@ -211,6 +218,8 @@ namespace DrawingFun {
             // 
             // groupBox1
             // 
+            this->groupBox1->Controls->Add(this->btnPickPoint2);
+            this->groupBox1->Controls->Add(this->btnPickPoint1);
             this->groupBox1->Controls->Add(this->tbFirstX);
             this->groupBox1->Controls->Add(this->btnDrawLine);
             this->groupBox1->Controls->Add(this->label1);
@@ -232,6 +241,26 @@ namespace DrawingFun {
             this->groupBox1->TabStop = false;
             this->groupBox1->Text = L"draw line";
             // 
+            // btnPickPoint2
+            // 
+            this->btnPickPoint2->BackColor = System::Drawing::SystemColors::Highlight;
+            this->btnPickPoint2->Location = System::Drawing::Point(309, 67);
+            this->btnPickPoint2->Name = L"btnPickPoint2";
+            this->btnPickPoint2->Size = System::Drawing::Size(38, 21);
+            this->btnPickPoint2->TabIndex = 12;
+            this->btnPickPoint2->UseVisualStyleBackColor = false;
+            this->btnPickPoint2->Click += gcnew System::EventHandler(this, &GetInputDialog::btnPickPoint2_Click);
+            // 
+            // btnPickPoint1
+            // 
+            this->btnPickPoint1->BackColor = System::Drawing::SystemColors::Highlight;
+            this->btnPickPoint1->Location = System::Drawing::Point(309, 35);
+            this->btnPickPoint1->Name = L"btnPickPoint1";
+            this->btnPickPoint1->Size = System::Drawing::Size(38, 21);
+            this->btnPickPoint1->TabIndex = 11;
+            this->btnPickPoint1->UseVisualStyleBackColor = false;
+            this->btnPickPoint1->Click += gcnew System::EventHandler(this, &GetInputDialog::btnPickPoint1_Click);
+            // 
             // tbCenterX
             // 
             this->tbCenterX->Location = System::Drawing::Point(101, 31);
@@ -242,6 +271,7 @@ namespace DrawingFun {
             // 
             // groupBox2
             // 
+            this->groupBox2->Controls->Add(this->btnPickCenterPnt);
             this->groupBox2->Controls->Add(this->label10);
             this->groupBox2->Controls->Add(this->label9);
             this->groupBox2->Controls->Add(this->label8);
@@ -261,10 +291,20 @@ namespace DrawingFun {
             this->groupBox2->TabStop = false;
             this->groupBox2->Text = L"draw circle";
             // 
+            // btnPickCenterPnt
+            // 
+            this->btnPickCenterPnt->BackColor = System::Drawing::SystemColors::Highlight;
+            this->btnPickCenterPnt->Location = System::Drawing::Point(309, 31);
+            this->btnPickCenterPnt->Name = L"btnPickCenterPnt";
+            this->btnPickCenterPnt->Size = System::Drawing::Size(38, 21);
+            this->btnPickCenterPnt->TabIndex = 14;
+            this->btnPickCenterPnt->UseVisualStyleBackColor = false;
+            this->btnPickCenterPnt->Click += gcnew System::EventHandler(this, &GetInputDialog::btnPickCenterPnt_Click);
+            // 
             // label10
             // 
             this->label10->AutoSize = true;
-            this->label10->Location = System::Drawing::Point(311, 14);
+            this->label10->Location = System::Drawing::Point(267, 13);
             this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label10->Name = L"label10";
             this->label10->Size = System::Drawing::Size(11, 12);
@@ -274,7 +314,7 @@ namespace DrawingFun {
             // label9
             // 
             this->label9->AutoSize = true;
-            this->label9->Location = System::Drawing::Point(217, 13);
+            this->label9->Location = System::Drawing::Point(200, 13);
             this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label9->Name = L"label9";
             this->label9->Size = System::Drawing::Size(11, 12);
@@ -293,7 +333,7 @@ namespace DrawingFun {
             // 
             // tbCenterZ
             // 
-            this->tbCenterZ->Location = System::Drawing::Point(284, 31);
+            this->tbCenterZ->Location = System::Drawing::Point(239, 31);
             this->tbCenterZ->Margin = System::Windows::Forms::Padding(2);
             this->tbCenterZ->Name = L"tbCenterZ";
             this->tbCenterZ->Size = System::Drawing::Size(65, 21);
@@ -301,7 +341,7 @@ namespace DrawingFun {
             // 
             // tbCenterY
             // 
-            this->tbCenterY->Location = System::Drawing::Point(191, 31);
+            this->tbCenterY->Location = System::Drawing::Point(170, 31);
             this->tbCenterY->Margin = System::Windows::Forms::Padding(2);
             this->tbCenterY->Name = L"tbCenterY";
             this->tbCenterY->Size = System::Drawing::Size(65, 21);
@@ -368,10 +408,12 @@ namespace DrawingFun {
         }
 #pragma endregion
 
-    private:
-        System::Void btnDrawLine_Click(System::Object^  sender, System::EventArgs^  e);
-        System::Void btnDrawCircle_Click(System::Object^  sender, System::EventArgs^  e);
-        System::Void GetInputDialog_Load(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void btnDrawLine_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void btnDrawCircle_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void GetInputDialog_Load(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void btnPickPoint1_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void btnPickPoint2_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void btnPickCenterPnt_Click(System::Object^  sender, System::EventArgs^  e);
 
     };
 }
