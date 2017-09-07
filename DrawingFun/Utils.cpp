@@ -1,9 +1,12 @@
 #include "StdAfx.h"
 #include <regex>
 #include <tchar.h>
+#include <iomanip>
+#include <sstream>
 #include "Utils.h"
 
 using namespace System::Text::RegularExpressions;
+using namespace System::Text;
 
 void postToModelSpace(AcDbEntity* pEnt)
 {
@@ -67,4 +70,35 @@ bool validateDouble(System::Windows::Forms::TextBox^ textBox)
 {
     bool retVal = validateDouble(textBox->Text);
     return retVal;
+}
+
+std::string format(double d)
+{
+    std::stringstream stream;
+    stream << std::fixed << std::setprecision(2) << d;
+    std::string retValue = stream.str();
+    return retValue;
+}
+
+std::string format(double d, std::streamsize precision)
+{
+    std::stringstream stream;
+    stream << std::fixed << std::setprecision(precision) << d;
+    std::string retValue = stream.str();
+    return retValue;
+}
+
+System::String^ format(double d, short precision)
+{
+    StringBuilder^ builder = gcnew StringBuilder();
+    builder->Append(2);
+    acutPrintf(_T("%s\n"), builder->ToString());
+    builder->Clear();
+    acutPrintf(_T("%s\n"), builder->ToString());
+    builder->Append("N");
+    acutPrintf(_T("%s\n"), builder->ToString());
+    builder->Append(precision);
+    acutPrintf(_T("%s\n"), builder->ToString());
+    System::String^ retValue = d.ToString(builder->ToString());
+    return retValue;
 }

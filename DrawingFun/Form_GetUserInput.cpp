@@ -17,7 +17,7 @@ System::Void DrawingFun::GetInputDialog::btnPickPoint1_Click(System::Object^  se
         ads_point result;
         if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
         {
-            tbFirstX->Text = Convert::ToString(result[X]);
+            tbFirstX->Text = Convert::ToString(format(result[X], 2));
             tbFirstY->Text = Convert::ToString(result[Y]);
             tbFirstZ->Text = Convert::ToString(result[Z]);
         }
