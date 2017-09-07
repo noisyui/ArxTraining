@@ -52,10 +52,14 @@ void logToFile(char *str)
 
 bool validateDouble(System::String^ str)
 {
-    acutPrintf(_T("start validate!"));
-    System::String^ pattern = "^[0-9]*([.][0-9]*)?$";
-    Regex^ r = gcnew Regex(pattern);
-    bool retVal = r->IsMatch(str);
+    bool retVal = false;
+
+    if (str != nullptr && str->Length > 0) {
+        System::String^ pattern = "^-?[0-9]*([.][0-9]*)?$";
+        Regex^ r = gcnew Regex(pattern);
+        retVal = r->IsMatch(str);
+    }
+
     return retVal;
 }
 
