@@ -72,7 +72,7 @@ bool validateDouble(System::Windows::Forms::TextBox^ textBox)
     return retVal;
 }
 
-std::string format(double d)
+std::string formatToStd2(double d)
 {
     std::stringstream stream;
     stream << std::fixed << std::setprecision(2) << d;
@@ -80,7 +80,7 @@ std::string format(double d)
     return retValue;
 }
 
-std::string format(double d, std::streamsize precision)
+std::string formatToStd(double d, std::streamsize precision)
 {
     std::stringstream stream;
     stream << std::fixed << std::setprecision(precision) << d;
@@ -90,15 +90,33 @@ std::string format(double d, std::streamsize precision)
 
 System::String^ format(double d, short precision)
 {
-    StringBuilder^ builder = gcnew StringBuilder();
-    builder->Append(2);
-    acutPrintf(_T("%s\n"), builder->ToString());
-    builder->Clear();
-    acutPrintf(_T("%s\n"), builder->ToString());
-    builder->Append("N");
-    acutPrintf(_T("%s\n"), builder->ToString());
-    builder->Append(precision);
-    acutPrintf(_T("%s\n"), builder->ToString());
-    System::String^ retValue = d.ToString(builder->ToString());
+    System::String^ retValue;
+    if (precision >= 0)
+    {
+        StringBuilder^ builder = gcnew StringBuilder();
+        /*builder->Append(2);
+        acutPrintf(_T("%s\n"), builder->ToString());
+        builder->Clear();
+        acutPrintf(_T("%s\n"), builder->ToString());
+        builder->Append("N");
+        acutPrintf(_T("%s\n"), builder->ToString());
+        builder->Append(precision);
+        acutPrintf(_T("%s\n"), builder->ToString());*/
+        builder->Append("0.");
+        for (int i = 0; i < precision; i++) {
+            builder->Append("#");
+        }
+        retValue = d.ToString(builder->ToString());
+    }
+    else
+    {
+        retValue = d.ToString();
+    }
+
     return retValue;
+}
+
+System::String^ format4(double d)
+{
+    return format(d, 4);
 }

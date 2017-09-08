@@ -17,9 +17,9 @@ System::Void DrawingFun::GetInputDialog::btnPickPoint1_Click(System::Object^  se
         ads_point result;
         if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
         {
-            tbFirstX->Text = Convert::ToString(format(result[X], 2));
-            tbFirstY->Text = Convert::ToString(result[Y]);
-            tbFirstZ->Text = Convert::ToString(result[Z]);
+            tbFirstX->Text = Convert::ToString(format4(result[X]));
+            tbFirstY->Text = Convert::ToString(format4(result[Y]));
+            tbFirstZ->Text = Convert::ToString(format4(result[Z]));
         }
         this->Show();
         acedClearOLELock(5);
@@ -34,9 +34,9 @@ System::Void DrawingFun::GetInputDialog::btnPickPoint2_Click(System::Object^  se
         ads_point result;
         if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
         {
-            tbSecondX->Text = Convert::ToString(result[X]);
-            tbSecondY->Text = Convert::ToString(result[Y]);
-            tbSecondZ->Text = Convert::ToString(result[Z]);
+            tbSecondX->Text = Convert::ToString(format4(result[X]));
+            tbSecondY->Text = Convert::ToString(format4(result[Y]));
+            tbSecondZ->Text = Convert::ToString(format4(result[Z]));
         }
         this->Show();
         acedClearOLELock(5);
@@ -52,9 +52,9 @@ System::Void DrawingFun::GetInputDialog::btnPickCenterPnt_Click(System::Object^ 
         if (acedGetPoint(NULL, _T("Pick a point: "), result) == RTNORM)
         {
             this->SetVisibleCore(true);
-            tbCenterX->Text = Convert::ToString(result[X]);
-            tbCenterY->Text = Convert::ToString(result[Y]);
-            tbCenterZ->Text = Convert::ToString(result[Z]);
+            tbCenterX->Text = Convert::ToString(format4(result[X]));
+            tbCenterY->Text = Convert::ToString(format4(result[Y]));
+            tbCenterZ->Text = Convert::ToString(format4(result[Z]));
         }
         this->SetVisibleCore(true);
         acedClearOLELock(5);
@@ -80,6 +80,10 @@ System::Void DrawingFun::GetInputDialog::btnDrawLine_Click(System::Object^  send
         pLine->setColorIndex(5);
 
         postToModelSpace(pLine);
+    }
+    else
+    {
+        acutPrintf(_T("Please check the input.The input can't be blank and can only contain number and dot."));
     }
 }
 
@@ -110,5 +114,9 @@ System::Void DrawingFun::GetInputDialog::btnDrawCircle_Click(System::Object^  se
 
         //logToFile("btnDrawCircle_Click End!\n");
         acutPrintf(_T("btnDrawCircle_Click End!"));
+    }
+    else
+    {
+        acutPrintf(_T("Please check the input.The input can't be blank and can only contain number and dot."));
     }
 }
